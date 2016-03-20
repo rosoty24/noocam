@@ -1,0 +1,26 @@
+<template name="addproduct">
+	<div class="container con-body">
+		<div class="row">
+			{{> adminmenu}}
+			<div class="col-lg-9">
+					<form role="form">
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input class="form-control" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input class="form-control" id="price" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Stock</label>
+                            <input class="form-control" id="stock" required>
+                        </div>
+                        <div class="row pull-right">
+                            <button type="submit" id="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </form>
+				</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,23 @@
+<template name="register">
+    <div class="container">
+        <h2>Register</h2>
+        <form class="register" style="margin-top:50px">
+            <!-- <label class="control-label">First Name</label>
+            <input type="text" name="fname" class="form-control">
+            <br/> -->
+            <label class="control-label">Select</label>
+            <select class="form-control" id="selectrole">
+                <option value="jobSeeker">Job Seeker</option>
+                <option value="employer">Employers</option>
+            </select>
+            <br/>
+            <label class="control-label">Email</label>
+            <input type="email" name="email" class="form-control">
+            <br/>
+            <label class="control-label">Password</label>
+            <input type="password" name="password" class="form-control">
+            <br/>
+            <input type="submit" class="btn btn-success" value="Register">
+        </form>
+    </div>
+</template>

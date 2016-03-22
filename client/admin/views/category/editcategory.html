@@ -1,0 +1,31 @@
+<template name="editcategory">
+	<div class="container con-body">
+		<div class="row">
+			{{> adminmenu}}
+			<div class="col-lg-9">
+					<form role="form">
+                        <div class="form-group">
+                            <label>Category Name</label>
+                            <input class="form-control" id="name" value="{{name}}" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="parentId">
+                                <option style="display:none">{{currentParent parent}}</option>
+                                <option value="0">Parent</option>
+                                {{#each getParent}}
+                                    <option value="{{_id}}">{{name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" id="upload" required>
+                        </div>
+                        <div class="row pull-right">
+                            <button type="submit" id="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </form>
+				</div>
+		</div>
+	</div>
+</template>

@@ -4,20 +4,20 @@ Template.addcategory.events({
 		var name = $("#name").val();
 		var image = Session.get('ADDIMAGEID');
 		var parent = $("#parentId").val();
-			parent = Number(parent);
+			alert(parent);
 		var obj = {
 			name:name,
 			image:image,
 			parent:parent
 		}
-		Meteor.call("ADD_CATEGORY",obj,function(error){
-			if(error){
-				console.log("ADD_CATEGORY"+error.reason);
-			}else{
-				console.log("ADD_CATEGORY ERROR");
-				Router.go("/admin/managecategory");
-			}
-		});
+		// Meteor.call("ADD_CATEGORY",obj,function(error){
+		// 	if(error){
+		// 		console.log("ADD_CATEGORY"+error.reason);
+		// 	}else{
+		// 		console.log("ADD_CATEGORY ERROR");
+		// 		Router.go("/admin/managecategory");
+		// 	}
+		// });
 	},
 	'change #upload': function(event, template) {
         var files = event.target.files;

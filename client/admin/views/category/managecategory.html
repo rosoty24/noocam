@@ -8,15 +8,15 @@
                         <thead>
                             <tr style="background:#ddd">
                                 <th id="text-color">#</th>
-                                <th id="text-color">Images</th>
                                 <th id="text-color">Titile</th>
+                                <th id="text-color">Images</th>
                                 <th width="25%" id="text-color">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {{#each getcategory}}
                                  <tr class="odd gradeX">
-                                    <td class="text-center">#</td>
+                                    <td class="text-center">{{index}}</td>
                                     <td class="text-center">{{name}}</td>
                                     <td class="text-center">
                                         <img src="{{getImage image}}" width="50">

@@ -1,0 +1,11 @@
+Meteor.methods({
+	ADD_INDUSTRY:function(obj){
+		industry.insert(obj);
+	},
+	EDIT_INDUSTRY:function(id,obj){
+		industry.update({_id:id},{$set:obj});
+	},
+	DELETE_INDUSTRY:function(id){
+		industry.remove({_id:id});
+	}
+})

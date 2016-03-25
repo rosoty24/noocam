@@ -2,6 +2,9 @@ Meteor.methods({
 	ADD_CATEGORY:function(obj){
 		category.insert(obj);
 	},
+	EDIT_CATEGORY:function(id,obj){
+		category.update({_id:id},{$set:obj});
+	},
 	DELETE_CAT:function(id){
 		category.remove({_id:id});
 	}

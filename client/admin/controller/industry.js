@@ -1,4 +1,4 @@
-Template.addcategory.events({
+Template.addindustry.events({
 	"click #submit":function(e){
 		e.preventDefault();
 		var name = $("#name").val();
@@ -10,12 +10,12 @@ Template.addcategory.events({
 			image:image,
 			parent:parent
 		}
-		Meteor.call("ADD_CATEGORY",obj,function(error){
+		Meteor.call("ADD_INDUSTRY",obj,function(error){
 			if(error){
-				console.log("ADD_CATEGORY"+error.reason);
+				console.log("ADD_INDUSTRY"+error.reason);
 			}else{
-				console.log("ADD_CATEGORY ERROR");
-				Router.go("/admin/managecategory");
+				console.log("ADD_INDUSTRY ERROR");
+				Router.go("/admin/manageindustry");
 			}
 		});
 	},
@@ -29,7 +29,7 @@ Template.addcategory.events({
         }
     }
 });
-Template.managecategory.helpers({
+Template.manageindustry.helpers({
 	getImage: function(image){
         var img = images.findOne({_id:image});
         if(img){
@@ -39,26 +39,26 @@ Template.managecategory.helpers({
             return;
         }
     },
-    getcategory:function(){
-    	return category.find().map(function(document, index){
+    getindustry:function(){
+    	return industry.find().map(function(document, index){
 	    document.index = index+1;
 		    return document;
 		});
     }
 });
-Template.managecategory.events({
+Template.manageindustry.events({
 	"click #remove":function(){
 		if(confirm("Are you sure want to delete this?")){
-			Meteor.call("DELETE_CAT",this._id);
+			Meteor.call("DELETE_INDUSTRY",this._id);
 		}
 	}
 });
-Template.addcategory.helpers({
+Template.addindustry.helpers({
 	getParent:function(){
 		return category.find({parent:"0"});
 	}
 });
-Template.editcategory.helpers({
+Template.editindustry.helpers({
 	getParent:function(){
 		return category.find({parent:"0"});
 	},
@@ -70,7 +70,7 @@ Template.editcategory.helpers({
 		}
 	}
 });
-Template.editcategory.events({
+Template.editindustry.events({
 	"click #submit":function(e){
 		e.preventDefault();
 		var id = this._id;
@@ -86,13 +86,13 @@ Template.editcategory.events({
 			image:image,
 			parent:parent
 		}
-		Meteor.call("EDIT_CATEGORY",id,obj,function(error){
+		Meteor.call("EDIT_INDUSTRY",id,obj,function(error){
 			if(error){
-				console.log("EDIT_CATEGORY"+error.reason);
+				console.log("EDIT_INDUSTRY"+error.reason);
 			}else{
 				Session.set('ADDIMAGEID',undefined);
-				console.log("EDIT_CATEGORY ERROR");
-				Router.go("/admin/managecategory");
+				console.log("EDIT_INDUSTRY ERROR");
+				Router.go("/admin/manageindustry");
 			}
 		});
 	},

@@ -1,5 +1,5 @@
 Meteor.methods({
 	insertJobPost:function(obj){
-		return postsAnnouncement.insert(obj);
+		return posts.insert(obj);
 	}
 })

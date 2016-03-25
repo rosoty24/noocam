@@ -30,9 +30,14 @@ Template.jobinfo.events({
             closedate:closedate
         }
         alert("hello");
-        Meteor.call("insertJobPost",jobpost,function(err){
-            if(err) console.log("errors insertJobPost "+err.reason);
-            else console.log("success insert job post");
+        Meteor.call("insertJobPost",jobpost,function(err,id){
+            if(err){
+                console.log("errors insertJobPost "+err.reason);
+            }else{
+                console.log("success insert job post");Router.go("/post/job-description");
+                Session.set("POSTSID",id);
+            } 
+
         });
         
     }
